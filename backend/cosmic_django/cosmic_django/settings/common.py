@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     # Third Apps
 
     # Local Apps
-
+    "post",
+    "project",
 ]
 
 MIDDLEWARE = [
