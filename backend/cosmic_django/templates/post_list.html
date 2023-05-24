@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <a href="{% url "post:post_new" %}">
+        <button type="button" class="btn btn-primary" >새 포스팅</button>
+    </a>
+    <hr>
     <div class="list-group">
         <a  class="list-group-item list-group-item-action active" aria-current="true">
             글 리스트
