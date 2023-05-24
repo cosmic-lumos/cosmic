@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="list-group">
+        <a  class="list-group-item list-group-item-action active" aria-current="true">
+            글 리스트
+        </a>
+        {% for a in postList %}
+            <a href="{{a.pk}}" class="list-group-item list-group-item-action">
+                <div class="card-header container">
+                        <div class="row">
+                            <div class="col" >
+                                {{ a.title }}
+                            </div>
+                            <div class="col col-sm-4 text-center">
+                                <small>{{ a.user }}</small>
+                            </div>
+                        </div>
+                    </div></a>
+        {% endfor %}
+    </div>
+{% endblock %}
