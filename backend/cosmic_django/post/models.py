@@ -25,8 +25,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, null=False, blank=False, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.CASCADE)
     created_at = models.DateField(auto_now_add=True, null=False, blank=False)
-    comment = models.TextField()
+    text = models.TextField()
 
     def __str__(self):
-        return self.comment
+        return self.text
 # Create your models here.
