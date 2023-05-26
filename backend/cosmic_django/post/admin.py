@@ -3,7 +3,7 @@ from .models import Post, Comment
 
 # Register your models here.
 class PostsAdmin(admin.ModelAdmin):
-    list_display = ('title','created',)
+    list_display = ('title','created','user')
 
 
 class CommentsAdmin(admin.ModelAdmin):

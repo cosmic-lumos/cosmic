@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load filter %}
 
 {% block content %}
     <div class="container">
@@ -16,7 +17,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        {{ post.content }}
+                        {{ post.content|mark }}
                     </div>
                     <div class="card-footer" style="text-align:center">
                         {% if post.image %}
@@ -26,5 +27,8 @@
                 </div>
             </div>
         </div>
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <button type="button" class="btn btn-primary" >돌아가기</button>
+        </a>
     </div>
 {% endblock %}
