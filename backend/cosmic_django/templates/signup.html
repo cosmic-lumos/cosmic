@@ -1,0 +1,33 @@
+{% block content %}
+<div>
+    {% if request.user.is_authenticated %}
+    <b3>You are alreay logged in.</b3>
+    {% else %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="username">Student ID</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="name" name="name" id="name">
+        </div>
+        <div>
+            <label>Birthday</label><br>
+            <label for="birthDateYear">Year</label>
+            <input type="birthDateYear" name="birthDateYear" id="birthDateYear">
+            <label for="birthDateMonth">Month</label>
+            <input type="birthDateMonth" name="birthDateMonth" id="birthDateMonth">
+            <label for="birthDateDay">Day</label>
+            <input type="birthDateDay" name="birthDateDay" id="birthDateDay">
+        </div>
+        <input type="submit" value="회원가입">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
