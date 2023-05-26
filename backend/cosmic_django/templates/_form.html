@@ -1,0 +1,44 @@
+{% load bootstrap4 %}
+
+<div class="card">
+    {% if form_title %}
+        <div class="card-header">
+            {{ form_title }}
+        </div>
+    {% endif %}
+    <div class="card-body">
+        {% if form %}
+        <div class="col-sm-6 offset-sm-3">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                        {{ submit_label | default:"Submit" }}
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+        {% else %}
+            <div class="alert alert-danger">
+                form 객체를 지정해주세요
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-sm-6 offset-sm-3">-->
+<!--            <form action="" method="POST" enctype="multipart/form-data">-->
+<!--                {% csrf_token %}-->
+<!--                {% bootstrap_form form %}-->
+<!--                {% buttons %}-->
+<!--                <button type="submit" class="btn btn-primary">-->
+<!--                    생성-->
+<!--                </button>-->
+<!--                {% endbuttons %}-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
