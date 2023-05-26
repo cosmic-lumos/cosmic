@@ -4,6 +4,7 @@
     {% if user.is_authenticated %}
     <a class="btn btn-outline-success" href="{% url 'projects:project_new' %}">생성하기</a>
     {% endif %}
+    <h1>프로젝트들 입니다.</h1>
     <div class="list-group list-group-horizontal">
         {% for project in projects %}
             <a href="/projects/{{ project.pk }}/" class="list-group-item list-group-item-action" aria-current="true">
