@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Third Apps
     "bootstrap4",
     # Local Apps
+    "account",
     "post",
     "project",
 ]
